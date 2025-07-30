@@ -1,0 +1,2 @@
+mosquitto_pub -m  "{\"type\":\"mqtt\",\"device_name\":\"test_device\",\"device_id\":1,\"firm_name\":\"pulse_firm\",\"greenhouse_id\":1,\"mobile_app_id\":1,\"flag\":0,\"ver\":\"1.0.0\",\"req\":{\"cmd\":1,\"fields\":[{\"action\":\"apply\",\"profile_no\":1,"user_profile":0,\"apply_date\":"28/10/2020",\"apply_time\":\"20:00:00\"}]}}"  -t "test" -h "localveggy.com" -p 1883 -u "pulsespectrum" -P "welcome"
+

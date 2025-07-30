@@ -1,0 +1,99 @@
+<html> 
+<head>
+<title>EC Provision Settings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css" media="screen"> 
+body{margin:0;padding:0;height:100%;}
+#d1{height:12%;width:100%;background-color:#006600;text-align:center;display:table;}
+#d2{height:20%;width:100%;font-size:100%;background-color:white;text-align:center;display:table;}
+#d3{height:8%;width:100%;background-color:#006600;text-align:center;display:table;}
+h1{color:white;font-size:200%;display:table-cell;vertical-align:middle;}
+h2{color:#009900;font-size:200%;height:10%;width:100%;background-color:white;text-align:left;display:table;}
+h3{color:white;font-size:140%;display:table-cell;vertical-align:middle;}
+label{width:25%;display:inline-block;text-align:left;}
+#submit{background-color: #4CAF50;color: white;padding: 10px 25px;text-align: center;font-size: 16px;cursor: pointer;width:100px;height:20%;}
+select{font-size:10pt;width:150px;height:20px;}
+input{font-size:10pt;height:20px;width:150px;}</style></head>
+<body>
+<div id="d1"><h1>Welcome to EC Provisioning</h1></div>
+<div id="d2"><form>
+<h2>Wi-fi Configuration</h2>
+<label for="ssid">SSID</label> <input type="text" id="ssid" name="ssid" required><br><br>
+<label for="pswd">Passphrase</label> <input type="text" id="pswd" name="pswd" required><br><br>
+<label for="timezone">Time zone</label> <input type="text" id="timezone" name="timezone" required><br><br>
+<label for="method">Wifi security</label> <select name="method" id="method" onclick="enableInput('method','identity','uname','upaswrd','ca','client','key','keypass','pswd')"><option value="0">PSK</option><option value="1">PEAP</option><option value="2">TLS</option><option value="3">TTLS</option> </select><br><br>
+<label for="identity">EAP Identity</label> <input type="text" id="identity" name="identity"disabled required><br><br>
+<label for="uname">Username</label> <input type="text" id="uname" name="uname"disabled required><br><br>
+<label for="upaswrd">Password</label> <input type="text" id="upaswrd" name="upaswrd"disabled required><br><br>
+<label for="ca">CA certificate (pem)</label> <input type="file" id="ca" onclick="document.getElementById('ca').addEventListener('change',function(){var fr=new FileReader();fr.onload=function(){document.getElementById('ca_cert').value=fr.result;};fr.readAsText(this.files[0]);})" disabled required><br><br>
+<input type="hidden" id="ca_cert" name="ca_cert">
+<label for="client">Client certificate (pem)</label> <input type="file" id="client" onclick="document.getElementById('client').addEventListener('change',function(){var fr=new FileReader();fr.onload=function(){document.getElementById('client_cert').value=fr.result;};fr.readAsText(this.files[0]);})" disabled required><br><br>
+<input type="hidden" id="client_cert" name="client_cert">
+<label for="key">Key certificate (key)</label> <input type="file" id="key" onclick="document.getElementById('key').addEventListener('change',function(){var fr=new FileReader();fr.onload=function(){document.getElementById('key_cert').value=fr.result;};fr.readAsText(this.files[0]);})" disabled required><br><br>
+<input type="hidden" id="key_cert" name="key_cert">
+<label for="keypass">Key password</label> <input type="text" id="keypass" name="keypass"disabled required><br><br>
+<h2>Mqtt Configuration</h2>
+<label for="hostname">Hostname</label> <input type="text" id="hostname" name="hostname" required><br><br>
+<label for="mqtttype">Security</label> <select name="mqtttype" id="mqtttype" onclick="document.getElementById('mqtttype').addEventListener('change', function () {if (this.value == '0'){document.getElementById('username').disabled = false;document.getElementById('password').disabled = false;document.getElementById('mca').disabled = true;document.getElementById('mclient').disabled = true;document.getElementById('mkey').disabled = true;}else if(this.value == '1'){document.getElementById('username').disabled = true;document.getElementById('password').disabled = true;document.getElementById('mca').disabled = false;document.getElementById('mclient').disabled = false;document.getElementById('mkey').disabled = false;}});"><option value="0">NO_SECURITY</option><option value="1">SSL</option></select><br><br>
+<label for="username">Username</label> <input type="text" id="username" name="username" required><br><br>
+<label for="password">Password</label> <input type="text" id="password" name="password" required><br><br>
+<label for="mca">CA certificate (pem)</label> <input type="file" id="mca" onclick="document.getElementById('mca').addEventListener('change',function(){var fr=new FileReader();fr.onload=function(){document.getElementById('mqtt_ca').value=fr.result;};fr.readAsText(this.files[0]);})" disabled required><br><br>
+<input type="hidden" id="mqtt_ca" name="mqtt_ca">
+<label for="mclient">Client certificate (pem)</label> <input type="file" id="mclient" onclick="document.getElementById('mclient').addEventListener('change',function(){var fr=new FileReader();fr.onload=function(){document.getElementById('mqtt_client').value=fr.result;};fr.readAsText(this.files[0]);})" disabled><br><br>
+<input type="hidden" id="mqtt_client" name="mqtt_client">
+<label for="mkey">Key certificate (pem)</label> <input type="file" id="mkey" onclick="document.getElementById('mkey').addEventListener('change',function(){var fr=new FileReader();fr.onload=function(){document.getElementById('mqtt_key').value=fr.result;};fr.readAsText(this.files[0]);})" disabled><br><br>
+<input type="hidden" id="mqtt_key" name="mqtt_key">
+<label for="topic">Topic</label> <input type="text" id="topic" name="topic" required><br><br>
+<label for="portnumber">Port number</label> <input type="text" id="portnumber" name="portnumber" required><br><br>
+<label for="qostype">Qos type</label> <select name="qostype" id="qostype"> <option value="0">Qos0</option> <option value="1">Qos1</option> <option value="2">Qos2</option> </select><br><br>
+<h2>Device Configuration</h2>
+<label for="devname">Device name</label> <input type="text" id="devname" name="devname" required><br><br>
+<label for="fname">Firm name</label> <input type="text" id="fname" name="fname" required><br><br>
+<label for="devid">Device ID</label> <input type="text" id="devid" name="devid" required><br><br>
+<label for="ghouseid">Green house ID</label> <input type="text" id="ghouseid" name="ghouseid" required><br><br>
+<label for="appid">Mobile APP ID</label> <input type="text" id="appid" name="appid" required><br><br>
+<label for="devtype">Controller Type</label> <select name="devtype" id="devtype" onclick=""><option value="0">GROW_CONTROLLER</option><option value="1">LIGHT_CONTROLLER</option><option value="2">FXP_CONTROLLER</option><option value="3">CO2_CONTROLLER</option><option value="4">IRRIGATION_CONTROLLER</option></select><br><br>
+<h2>Grow Cycle Info</h2>
+<label for="munit">Measure unit</label> <select name="munit" id="munit"> <option value="0">English</option> <option value="1">Metric</option> </select><br><br>  
+<label for="clk">Clock</label> <select name="clk" id="clk"> <option value="0">12HR</option> <option value="1">24HR</option> </select><br><br>   
+<label for="lang">Language</label> <select name="lang" id="lang"> <option value="0">English</option> <option value="1">Korean</option> <option value="2">Japanese</option> <option value="3">Chinese</option> <option value="4">German</option> <option value="5">Others</option> </select><br><br>   
+<label for="lowtmp">Report low temperature threshold</label> <select name="lowtmp" id="lowtmp"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br>   
+<label for="lowtchk">Threshold value</label> <input type="text" id="lowtchk" name="lowtchk" required><br><br>
+<label for="hightmp">Report high temperature threshold</label> <select name="hightmp" id="hightmp"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br>
+<label for="hightchk">Threshold value</label> <input type="text" id="hightchk" name="hightchk" required><br><br>  
+<label for="crittmp">Report critical temperature threshold</label> <select name="crittmp" id="crittmp"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br>  
+<label for="critchk">Threshold value</label> <input type="text" id="critchk" name="critchk" required><br><br>
+<label for="lowhmdy">Report low humidity threshold</label> <select name="lowhmdy" id="lowhmdy"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br>  
+<label for="lowhchk">Threshold value</label> <input type="text" id="lowhchk" name="lowhchk" required><br><br>
+<label for="highhmdy">Report high humidity threshold</label> <select name="highhmdy" id="highhmdy"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br>
+<label for="highdchk">Threshold value</label> <input type="text" id="highdchk" name="highdchk" required><br><br>
+<label for="lowco2">Report low CO2 threshold</label> <select name="lowco2" id="lowco2"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br>  
+<label for="lowcchk">Threshold value</label> <input type="text" id="lowcchk" name="lowcchk" required><br><br>
+<label for="highco2">Report high CO2 threshold</label> <select name="highco2" id="highco2"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br> 
+<label for="highcchk">Threshold value</label> <input type="text" id="highcchk" name="highcchk" required><br><br> 
+<label for="battery">Report battery fault</label> <select name="battery" id="battery""> <option value="0">No</option> <option value="1">Yes</option> </select><br><br>
+<label for="ac">Report AC power fault</label> <select name="ac" id="ac"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br>  
+<label for="sensor">Report sensor fault</label> <select name="sensor" id="sensor"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br>
+<label for="rs485">Report RS485 fuse fault</label> <select name="rs485" id="rs485""> <option value="0">No</option> <option value="1">Yes</option> </select><br><br> 
+<label for="tmr">Light restrike timer check</label> <select name="tmr" id="tmr"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br> 
+<label for="duratn">Light restrike duration</label> <input type="text" id="duratn" name="duratn" required><br><br> 
+<label for="delay">Device hoodvent native finish delay</label> <input type="text" id="delay" name="delay" required><br><br>
+<label for="voltage">Battery voltage</label> <input type="text" id="voltage" name="voltage" required><br><br>
+<label for="trigv">Batttery trigger voltage</label> <input type="text" id="trigv" name="trigv" required><br><br>
+<label for="hystv">Batttery hysteresis voltage</label> <input type="text" id="hystv" name="hystv" required><br><br>
+<label for="vdelay">CO2 pva vent delay time</label> <input type="text" id="vdelay" name="vdelay" required><br><br>
+<label for="sheight">Sensor Height</label> <input type="text" id="sheight" name="sheight" required><br><br>
+<h2>Smtp Configuration</h2>
+<label for="email">Email address</label> <input type="email" id="email" name="email" required><br><br>
+<label for="passwd">Email password</label> <input type="text" id="passwd" name="passwd" required><br><br>
+<label for="hname">Hostname</label> <input type="text" id="hname" name="hname" required><br><br>
+<label for="smtp_port">Port number</label> <input type="text" id="smtp_port" name="smtp_port" required><br><br>  
+<label for="toaddr">To address</label> <input type="email" id="toaddr" name="toaddr" required><br><br>
+<label for="ccaddr">Cc address</label> <input type="email" id="ccaddr" name="ccaddr"><br><br>
+<label for="security">Security</label> <select name="security" id="security"> <option value="0">No</option> <option value="1">Yes</option> </select><br><br> 
+<input type="submit" value="Submit" id="submit">
+</form> </div><div id="d3"><h3>Copyright &copy; PulseSpectrum 2022. All rights reserved</h3></div>
+<div id="output" name="output"></div>
+<script>
+function enableInput(in1,in2,in3,in4,in5,in6,in7,in8,in9) {document.getElementById(in1).addEventListener('change', function () {if (this.value == "0"){document.getElementById(in2).disabled = true;document.getElementById(in3).disabled = true;document.getElementById(in4).disabled = true;document.getElementById(in5).disabled = true;document.getElementById(in6).disabled = true;document.getElementById(in7).disabled = true;document.getElementById(in8).disabled = true;document.getElementById(in9).disabled = false;}else if(this.value == "1" || this.value == "3"){document.getElementById(in2).disabled = false;document.getElementById(in3).disabled = false;document.getElementById(in4).disabled = false;document.getElementById(in5).disabled = true;document.getElementById(in6).disabled = true;document.getElementById(in7).disabled = true;document.getElementById(in8).disabled = true;document.getElementById(in9).disabled = true;}else if(this.value =="2"){document.getElementById(in2).disabled = false;document.getElementById(in3).disabled = true;document.getElementById(in4).disabled = true;document.getElementById(in5).disabled = false;document.getElementById(in6).disabled = false;document.getElementById(in7).disabled = false;document.getElementById(in8).disabled = false;document.getElementById(in9).disabled = true;}});};
+</script></body></html>

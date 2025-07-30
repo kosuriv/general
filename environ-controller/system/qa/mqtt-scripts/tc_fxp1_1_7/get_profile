@@ -1,0 +1,4 @@
+mosquitto_pub -m  "{\"type\":\"mqtt\",\"device_name\":\"$1\",\"device_id\":1,\"farm_name\":\"pulse_firm\",\"greenhouse_id\":1,\"mobile_app_id\":1,\"ver\":\"1.0.0\",\"flag\":0,\"req\":{\"cmd\":1,\"fields\":[{\"action\":\"get\",\"profile_no\":14,\"user_profile\":1}]}}"  -t "test" -h "localveggy.com" -p 1883 -u "pulsespectrum" -P "welcome"5 --cafile $2 --cert $3 --key $4
+
+
+

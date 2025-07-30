@@ -1,0 +1,53 @@
+mosquitto_pub -m "{\"type\":\"mqtt\",\"device_name\":\"$1\",\"device_id\":1,\"farm_name\":\"pulse_firm\",\"greenhouse_id\":1,\"mobile_app_id\":1,\"ver\":\"1.0.0\",\"flag\":0,\"req\":{\"cmd\":0,\"fields\":[{\"action\":\"set\"},{\"wifi_info\":{\"ssid\":\"Wdbsystems3\",\"passphrase\":\"WDBNet123\",\"time_zone\":\"UTC-05:30\"}},{\"mqtt_info\":{\"hostname\":\"localveggy.com\",\"mqtt_security\":1,\"mqtt_ca_cert\":\"-----BEGIN CERTIFICATE-----
+MIID2TCCAsGgAwIBAgIJAMRHD33MrNOHMA0GCSqGSIb3DQEBCwUAMIGCMQswCQYD
+VQQGEwJJTjELMAkGA1UECAwCS0ExEjAQBgNVBAcMCUJhbmdhbG9yZTEMMAoGA1UE
+CgwDd2RiMQ0wCwYDVQQLDAR0ZWNoMRcwFQYDVQQDDA5sb2NhbHZlZ2d5LmNvbTEc
+MBoGCSqGSIb3DQEJARYNdGVzdEB0ZXN0LmNvbTAeFw0yMjAzMjEwNjE5NTdaFw0y
+MzAzMjEwNjE5NTdaMIGCMQswCQYDVQQGEwJJTjELMAkGA1UECAwCS0ExEjAQBgNV
+BAcMCUJhbmdhbG9yZTEMMAoGA1UECgwDd2RiMQ0wCwYDVQQLDAR0ZWNoMRcwFQYD
+VQQDDA5sb2NhbHZlZ2d5LmNvbTEcMBoGCSqGSIb3DQEJARYNdGVzdEB0ZXN0LmNv
+bTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAPeQMtK6Myz9VK859ZiU
+RmQW73TevABWtSk5x3d6c2lhBiY2GdL1BmblwA09+qRtwVZAUuHwo/UBKXTAPJ2A
+LMNJaqancnmPK/nzfmnFeDl5Lbu1n9PCJUeF4lQ86h//hRl2CPIgaGZYoXzacLps
+BStWCLfeZNXAh+FinTmFt8JvivYVSUITSJhY5/hg6/D1qCXoI3rjtE9EdIa49B/F
+WCYi4h161Bw5gVE87cE2jSvonHxmB7V3/RieRF9Iay3zMLj8ESX14GG+RiOjfFdz
+aAAMCBf1YPVEJhFO8EgmDAKgfuskpY1JOSXaoZRtZSF/nIWKtW8Tbfb+Oo7Tt6B2
+pYsCAwEAAaNQME4wHQYDVR0OBBYEFBQnIuSm988lX+0Fsr55fHQcwx91MB8GA1Ud
+IwQYMBaAFBQnIuSm988lX+0Fsr55fHQcwx91MAwGA1UdEwQFMAMBAf8wDQYJKoZI
+hvcNAQELBQADggEBAJVEaqK/+2DhHj++mAUQQm+vwpp9b9YIF5DP/VUDaqFT1tz9
+4OeliLgykcSjc3nnEqIrxojAzwA6Hu1hFN57PTWYujD8tyI/3yLdstAyXfve1qYm
+OCEBTMaswEdkUvGz8suf+rFaD/DEWZu3YVXIpwkH1RwO1vj5LElR5dvK/JGQ4C7r
+pSzzzCqCglyT0AwPqlGKop8IfIbyW7VePBswyGwhk0fj+Tcjhqj06+q7vuZcbsnP
+VY/qaMHQNr1uxGpqofd+HF+mbHBkefdrCfRCujea+9jA0d5By3K0hXz69BVX3ke4
+BvGPt2w4mzEzVdM1ukcDWStNbFyj9vbrwTuoPZk=
+-----END CERTIFICATE-----\",\"mqtt_client_cert\":\"-----BEGIN CERTIFICATE-----
+MIICVjCCAb+gAwIBAgIJAO6r/wX1pbFPMA0GCSqGSIb3DQEBCwUAMEQxCzAJBgNV
+BAYTAklOMQswCQYDVQQIDAJLQTELMAkGA1UEBwwCQkExDDAKBgNVBAoMA3dkYjEN
+MAsGA1UECwwEdGVzdDAeFw0yMjAzMjQwNzEzMDlaFw0yMzAxMTgwNzEzMDlaMEQx
+CzAJBgNVBAYTAklOMQswCQYDVQQIDAJLQTELMAkGA1UEBwwCQkExDDAKBgNVBAoM
+A3dkYjENMAsGA1UECwwEdGVzdDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA
+pBbZM/KR/0Y9QcZkxgtrPHSItrbsKzpmQ/v3BXO/q97kz4ibyi8HyDt82Mq4DuVA
+ye1lbOP1PVZQsU+GaP96iZ/mLnEm2wEEZzKSNxtWk3lTpxXlpfPkHoev1Resyd0l
+7Gb7XAAbBjFxy8HUOpLsNdihGtZeXY/2wL0MJWElT7kCAwEAAaNQME4wHQYDVR0O
+BBYEFCoAU1Cv2ShO8j7uaXy9Tcapef0dMB8GA1UdIwQYMBaAFCoAU1Cv2ShO8j7u
+aXy9Tcapef0dMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQELBQADgYEAfA8RQW7n
+Y0t9Xxeh2X/rM83N3T/SPqsE4gcHr9wviMVlYsEkIKpz9RM4f7inaFnQJRpgnB66
+CfCrxPywNfFFgrTDZw/niKgCUItzgqlfpsa8cx5/35lRH5Bm3oYzz8muG0vxHfJm
+CW1Ovczn205TMe2g2ZqxtNKU2RhSh2hdJv0=
+-----END CERTIFICATE-----\",\"mqtt_key_cert\":\"-----BEGIN PRIVATE KEY-----
+MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKQW2TPykf9GPUHG
+ZMYLazx0iLa27Cs6ZkP79wVzv6ve5M+Im8ovB8g7fNjKuA7lQMntZWzj9T1WULFP
+hmj/eomf5i5xJtsBBGcykjcbVpN5U6cV5aXz5B6Hr9UXrMndJexm+1wAGwYxccvB
+1DqS7DXYoRrWXl2P9sC9DCVhJU+5AgMBAAECgYEAhBGPyGvYbmoOK76OpYfTS9lP
+oCAifbiHTvihnVXIU4EXEKKXIWgxD0wx9BtVgUermdrk43umizPJxqyHNkNKT+jI
+0mSy79fDEwsTpakjRT3eJChR3vU9aFIc7sdumgj4VjPsVUXnIiSh3hMipNBuM+zu
+KXFEJh8N/FH4Apenu3ECQQDSAU51pUOhosz0kYPqSVrh/hEN9xMUiJ3+ESlSZWmi
+ifvr5Xs1nKQPXlrh5dCWAwVbIE+T8kDTmYHuqYuNV0KXAkEAyAcaqSZJ/5o8d3jE
+Iql8EL8gAc6VoiprFqZLxXJjW0UR6KjtG4CdmLCOnFTgWpVrm3KDjOcJ6LQBXTSW
+1uFaLwJAVAZtzCiZzNyEwP5QF7fOA0pSrJHFMpwPCw72x58ICx7Gi3ZAPA02n2eT
+WXtIYB1JUVK2RG3TflaXZFS2H5FgdQJBAJtxMd26/IxeXpj1R24sSVZ2QDhHQu8H
+ibrLNlzU/LMjpLwp8kCKHW5X3itMpiCet0XQorwvmvq0T88PnByWeU8CQDuo6TZ2
+bw4oQTFienW3qFC9+UkFtjcYp2qabqngGy4awDnhtMc4YLI1FRA+LYNGTBNyTVJ0
+yt3fMHdTiATwOpc=
+-----END PRIVATE KEY-----\",\"topic\":\"test\",\"portno\":1885,\"qos_type\":1}},{\"device_info\":{\"dev_name\":\"$1\",\"fname\":\"pulse_firm\",\"dev_id\":1,\"ghouse_id\":1,\"app_id\":1,\"ver_info\":\"1.0.0\"}},{\"grow_info\":{\"measure_unit\":1,\"clk\":1,\"language\":0,\"rpt_lo_tmp\":1,\"lo_tmp_chk_val\":20.00,\"rpt_hi_tmp\":1,\"hi_tmp_chk_val\":40.00,\"rpt_critical_tmp\":1,\"critical_tmp_chk_val\":35.00,\"rpt_lo_hmdy\":1,\"lo_hmdy_chk_val\":50.00,\"rpt_hi_hmdy\":1,\"hi_hmdy_chk_val\":80.00,\"rpt_lo_co2\":1,\"lo_co2_chk_val\":800.00,\"rpt_hi_co2\":1,\"hi_co2_chk_val\":1500.00,\"rpt_battery_flt\":1,\"rpt_frequency_flt\":1,\"rpt_emr_fuse_flt\":1,\"rpt_sensor_flt\":1,\"rpt_rs485_fuse_flt\":1,\"light_restrike_tmr\":1,\"light_restrike_dur\":\"02:00:20\",\"dev_hoodvent_nt_finish_delay\":\"00:05:00\",\"battery_voltage\":04.08,\"battery_trig_voltage\":02.65,\"battery_hyst_voltage\":02.85,\"co2_pva_vent_delay_time\":\"00:02:00\"}},{\"smtp_info\":{\"email_address\":\"lintam@gmail.com\",\"email_password\":\"password\",\"smtp_host_name\":\"smtp.gmail.com\",\"smtp_port\":465,\"smtp_security\":1,\"to_addresses\":\"usha12@gmail.com\",\"cc_addresses\":\"NULL\",\"signature\":\"NULL\"}}]}}" -t "test" -h "localveggy.com" -p 1885 --cafile $2 --cert $3 --key $4 
+

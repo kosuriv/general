@@ -1,0 +1,17 @@
+#! /usr/bin/perl
+foreach $f (@ARGV) {
+	open(IN, $f) || die ("cannot open $f: $!");
+	binmode(IN);
+
+	($a = $f) =~ s/\W/_/g;
+	print "const unsigned char ${a}[] = {\n";
+
+	while (read(IN, $x, 256)) {
+		$y = unpack('H*', $x);
+		$y =~ s/../0x$&,/g;
+		print $y, "\n";
+	}
+
+	print "};\n\n";
+	close(IN);
+}

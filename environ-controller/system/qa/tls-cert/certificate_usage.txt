@@ -1,0 +1,31 @@
+wif tls
+-------------
+
+ca cert :- linux_ca_365.pem
+client cert :- generic_client_cert_300.pem
+key         :- generic_client_key_300.key
+
+
+
+
+
+mqtt ssl  locla linux machine 
+-------------
+
+ca cert :- linux_ca_365.pem
+client cert :- generic_client_cert_300.pem
+key         :- generic_client_key_300.key
+
+
+make sure that local linux machine is at ip address 192.168.1.137
+
+
+
+
+mqtt ssl  localveggy.com  machine 
+-------------
+
+ca cert :- localveggy_ca_365.pem
+client cert :- generic_client_cert_300.pem
+key         :- generic_client_key_300.key
+
